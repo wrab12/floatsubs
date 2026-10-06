@@ -1,5 +1,7 @@
 # FloatSubs 悬浮字幕
 
+**简体中文** | [English](README.en.md)
+
 把 YouTube 的字幕“抠”下来，变成悬浮在 Mac 桌面上的双语字幕，就像网易云音乐的桌面歌词一样。
 
 *Floating, always-on-top bilingual subtitles for YouTube on macOS. It shows Language Reactor's subtitles anywhere on your screen, even when YouTube is in the background. Hover to pause, click a word to look it up and hear it.*
