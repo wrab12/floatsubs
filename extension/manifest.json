@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "悬浮字幕 FloatSubs",
+  "version": "0.2.0",
+  "description": "把 YouTube 上 Language Reactor（或 YouTube 自带）的字幕实时送到 Mac 桌面悬浮窗。",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAm5ljepMVir84gy9y4GtHe0zEkzaSgvHv3XN7dRMFNJoelGU6jssleVkFCZRyC13DVq148LhnyVEiKBddIc7yH67eNYK8rbYd2l5TSK7ILG9bNXArKT205ob3VS0JZN4vGsw+ROCeMzfSBZpimPAYsVgDRgjeHlTqZb7B0vM09XjfXwGviCV+dFWRo5ufnStHazSoTLeRWDptTIHU5E0waK7AjRHJhhKzp+jEsW+q+RYRAJJUrQXJkKeF0A3JxADG8Ktfk7LAY7RjNR3mRjVrspqSLW2CGrYr8gKA5utrqFETebu88YCHPOqzV9t7nzDncltWv0E4Et028YGlWGnZPwIDAQAB",
+  "permissions": ["nativeMessaging", "storage"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["page.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "action": {
+    "default_title": "悬浮字幕：已开启（点击关闭）",
+    "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png" }
+  }
+}
